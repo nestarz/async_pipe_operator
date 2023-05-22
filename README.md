@@ -1,7 +1,7 @@
-# pipe_operator
+# pipe
 
 ```ts
-import pipe from "https://deno.land/x/pipe_operator/mod.ts";
+import pipe from "https://deno.land/x/pipe/mod.ts";
 
 const fn = pipe(
   (...nbs: number[]) => nbs.reduce((a, b) => a + b, 0),
