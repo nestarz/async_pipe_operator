@@ -4,10 +4,10 @@
 import pipe from "https://deno.land/x/pipe_operator/mod.ts";
 
 const fn = pipe(
-  (...nbs) => nbs.reduce((a, b) => a + b, 0),
-  async (c) => c * (await Promise.resolve(10)),
-  (d) => d + 1000
-);
+  (...nbs: number[]) => nbs.reduce((a, b) => a + b, 0),
+  async (c: number) => c * (await Promise.resolve(10)),
+  (d: number) => d + 1000
+); // const fn: (...args: number[]) => Promise<number>
 
 await fn(1, 2, 3, 4, 5) // 1150
 ```
