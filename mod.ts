@@ -1,13 +1,13 @@
-type AnyFunc = (...arg: any[]) => Promise<any> | any;
+export type AnyFunc = (...arg: any[]) => Promise<any> | any;
 
-type LastFnReturnType<F extends Array<AnyFunc>, Else = never> = F extends [
+export type LastFnReturnType<F extends Array<AnyFunc>, Else = never> = F extends [
   ...any[],
   (...arg: any) => infer R
 ]
   ? R
   : Else;
 
-type PipeArgs<F extends AnyFunc[], Acc extends AnyFunc[] = []> = F extends [
+export type PipeArgs<F extends AnyFunc[], Acc extends AnyFunc[] = []> = F extends [
   (...args: infer A) => infer B
 ]
   ? [...Acc, (...args: A) => B | Promise<B>]
