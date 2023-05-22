@@ -29,3 +29,5 @@ export const pipe =
       (acc, fn) => (acc instanceof Promise ? acc.then(fn) : fn(acc)),
       firstFn(...args)
     );
+
+export default pipe;
